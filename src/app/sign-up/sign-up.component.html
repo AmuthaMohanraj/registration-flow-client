@@ -1,0 +1,30 @@
+<p>sign-up works!</p>
+
+<div class="signup-form">
+    <h2>Sign Up</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="body.username" name="username" pInputText />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="body.email" name="email" pInputText />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="body.password" class="full-width">
+
+    </div>
+      <div class="form-group">
+        <button type="button" pButton label="Sign Up" (click)="signUp()" class="p-button-primary"></button>
+      </div>
+    </form>
+
+    <div *ngIf="errorMessage" id="err-message">{{ errorMessage }}</div>
+
+    <div class="login-link">
+      Already have an account? <a routerLink="/signin">Login</a>
+    </div>
+  </div>
+  
